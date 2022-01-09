@@ -1,0 +1,20 @@
+{
+  "name": "lvb_raspi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hafas-client": "^5.22.1",
+    "insa-hafas": "^1.0.1",
+    "lodash": "^4.17.21",
+    "lvb": "^1.0.6",
+    "tape": "^5.4.0",
+    "tape-promise": "^4.0.0"
+  }
+}
