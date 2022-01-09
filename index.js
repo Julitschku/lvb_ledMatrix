@@ -10,7 +10,7 @@ function Anzeigen(o){
     var Bahn = new Array()
     var Bahn = []
     a = client.departures('11330', {
-        duration: 60,
+        duration: 120,
         direction: "13002",
         products: {bus: false, suburban: false},
         results: 2
@@ -34,7 +34,7 @@ function Anzeigen(o){
         }
 
         b = client.departures('12083', {
-            duration: 60,
+            duration: 120,
             direction: "13002",
             products: {bus: false, suburban: false},
             results: 2
