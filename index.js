@@ -4,6 +4,7 @@ const departures = require("lvb");
 const {date} = require("hafas-client/format");
 const {dateTime} = require("hafas-client/parse");
 const client = createClient(vbbProfile, 'my-awesome-program')
+const Jimp = require('Jimp')
 
 function Anzeigen(o){
 
@@ -56,12 +57,29 @@ function Anzeigen(o){
                 }
                 Bahn.push(eintrag)
             }
-            Bahn.sort(function (a, b) {
+           /* Bahn.sort(function (a, b) {
                 return a.Ankunft - b.Ankunft;
-            })
+            })*/
+
+            Jimp.read("/Users/julian/IdeaProjects/lvb_raspi/img.png")
+                .then(function (image) {
+                    loadedImage = image;
+                    return Jimp.loadFont("/Users/julian/Downloads/PressStart2P-vaV7.ttf-5/16aPkv_cojdMp4jRi15f5RX3.ttf.fnt");
+                })
+                .then(function (font) {
+                    loadedImage.print(font, 0, 8, "19")
+                    loadedImage.print(font, 0, 16, "39")
+                    loadedImage.print(font, 32, 8, "16")
+                    loadedImage.print(font, 32, 16, "33")
+                        .write("/Users/julian/IdeaProjects/lvb_raspi/img2.png");
+                    Anzeigen(++o);
+                })
+                .catch(function (err) {
+                    console.error(err);
+                });
             console.log(Bahn)
             console.log(o)
-            Anzeigen(++o);
+
         })
     })
 }

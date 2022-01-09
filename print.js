@@ -11,7 +11,10 @@ Jimp.read("/Users/julian/IdeaProjects/lvb_raspi/img.png")
         return Jimp.loadFont("/Users/julian/Downloads/PressStart2P-vaV7.ttf-5/16aPkv_cojdMp4jRi15f5RX3.ttf.fnt");
     })
     .then(function (font) {
-        loadedImage.print(font, 0, 8, "30+2")
+        loadedImage.print(font, 0, 8, "19")
+        loadedImage.print(font, 0, 16, "39")
+        loadedImage.print(font, 32, 8, "16")
+        loadedImage.print(font, 32, 16, "33")
 
 
 
