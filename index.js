@@ -6,13 +6,7 @@ const {dateTime} = require("hafas-client/parse");
 const client = createClient(vbbProfile, 'my-awesome-program')
 
 function Anzeigen(){
-    /*
-    client.locations('witzgall', {results: 3})
-        .then(console.log)
-        .catch(console.error)
-    */
-
-
+    
     var Bahn = new Array()
     var Bahn = []
     a = client.departures('11330', {
@@ -72,3 +66,4 @@ function Anzeigen(){
 }
 
 Anzeigen();
+
