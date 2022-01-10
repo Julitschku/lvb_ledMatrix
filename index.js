@@ -4,7 +4,7 @@ const departures = require("lvb");
 const {date} = require("hafas-client/format");
 const {dateTime} = require("hafas-client/parse");
 const client = createClient(vbbProfile, 'my-awesome-program')
-const Jimp = require('Jimp')
+const Jimp = require('jimp')
 
 function Anzeigen(o){
 
@@ -57,14 +57,14 @@ function Anzeigen(o){
                 }
                 Bahn.push(eintrag)
             }
-           /* Bahn.sort(function (a, b) {
-                return a.Ankunft - b.Ankunft;
-            })*/
+            /* Bahn.sort(function (a, b) {
+                 return a.Ankunft - b.Ankunft;
+             })*/
 
             Jimp.read("img.png")
                 .then(function (image) {
                     loadedImage = image;
-                    return Jimp.loadFont("/Users/julian/Downloads/PressStart2P-vaV7.ttf-5/16aPkv_cojdMp4jRi15f5RX3.ttf.fnt");
+                    return Jimp.loadFont("/Users/julian/IdeaProjects/lvb_raspi/PressStart2P-vaV7.ttf-5/16aPkv_cojdMp4jRi15f5RX3.ttf.fnt");
                 })
                 .then(function (font) {
                     loadedImage.print(font, 0, 8,Bahn[0].Ankunft )
@@ -72,7 +72,7 @@ function Anzeigen(o){
                     loadedImage.print(font, 32, 8, Bahn[2].Ankunft)
                     loadedImage.print(font, 32, 16, Bahn[3].Ankunft)
                         .write("img2.png")
-                        (Anzeigen(++o));
+                        Anzeigen(++o);
 
                 })
                 .catch(function (err) {
