@@ -4,7 +4,7 @@ const departures = require("lvb");
 const {date} = require("hafas-client/format");
 const {dateTime} = require("hafas-client/parse");
 const client = createClient(vbbProfile, 'my-awesome-program')
-const Jimp = require('Jimp')
+const Jimp = require('jimp')
 
 function Anzeigen(o){
 

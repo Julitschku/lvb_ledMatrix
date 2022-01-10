@@ -5,7 +5,7 @@ const Jimp = require('Jimp')
 });*/
 
 
-Jimp.read("/Users/julian/IdeaProjects/lvb_raspi/img.png")
+Jimp.read("img.png")
     .then(function (image) {
         loadedImage = image;
         return Jimp.loadFont("/Users/julian/Downloads/PressStart2P-vaV7.ttf-5/16aPkv_cojdMp4jRi15f5RX3.ttf.fnt");
@@ -19,7 +19,7 @@ Jimp.read("/Users/julian/IdeaProjects/lvb_raspi/img.png")
 
 
 
-            .write("/Users/julian/IdeaProjects/lvb_raspi/img2.png");
+            .write("img2.png");
     })
     .catch(function (err) {
         console.error(err);
