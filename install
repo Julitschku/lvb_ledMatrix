@@ -1,5 +1,5 @@
 #!/bin/bash
-npm install --save hafas-client Jimp
+npm install --save hafas-client jimp
 
 node .
 
