@@ -3,7 +3,7 @@ const vbbProfile = require('hafas-client/p/insa')
 const {date} = require("hafas-client/format");
 const {dateTime} = require("hafas-client/parse");
 const client = createClient(vbbProfile, 'my-awesome-program')
-const Jimp = require('jimp')
+const Jimp = require('Jimp')
 
 function Anzeigen(o){
 
@@ -74,7 +74,7 @@ function Anzeigen(o){
                     loadedImage.print(font, 0, 16, Bahn[1].Ankunft)
                     loadedImage.print(font, 32, 8, Bahn[2].Ankunft)
                     loadedImage.print(font, 32, 16, Bahn[3].Ankunft)
-                        .write("img2.png")
+                        .write("img2.jpg")
                     Anzeigen(++o);
 
                 })
