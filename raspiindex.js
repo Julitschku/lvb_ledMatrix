@@ -1,6 +1,5 @@
 const createClient = require('hafas-client')
 const vbbProfile = require('hafas-client/p/insa')
-const departures = require("lvb");
 const {date} = require("hafas-client/format");
 const {dateTime} = require("hafas-client/parse");
 const client = createClient(vbbProfile, 'my-awesome-program')
@@ -47,7 +46,11 @@ function Anzeigen(o){
 
         b.then(function (result) {
             for (i = 0; i < 2; i++) {
-                var ankunft = Date.parse(result[i].plannedWhen)
+                try {
+                    var ankunft = Date.parse(result[i].plannedWhen)
+                }catch (e) {
+                    console.log("weitermachen")
+                }
                 var delay = result[i].delay
                 var zeitinmin = ((ankunft - new Date() + delay) / 60000)
                 var eintrag = {
@@ -72,7 +75,7 @@ function Anzeigen(o){
                     loadedImage.print(font, 32, 8, Bahn[2].Ankunft)
                     loadedImage.print(font, 32, 16, Bahn[3].Ankunft)
                         .write("img2.png")
-                        (Anzeigen(++o));
+                    Anzeigen(++o);
 
                 })
                 .catch(function (err) {
@@ -86,4 +89,3 @@ function Anzeigen(o){
 }
 
 Anzeigen(0);
-
